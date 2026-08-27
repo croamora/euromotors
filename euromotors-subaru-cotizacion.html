@@ -207,7 +207,6 @@
         <div class="mini-total"><span>IVA 19%</span><b id="ivaTotal">$351.500</b></div>
         <div class="mini-total"><span>Total con IVA</span><b id="grossTotal">$2.201.500</b></div>
       </div>
-      <div class="total"><span>Total proyecto seleccionado<small>Monto neto. IVA calculado arriba para referencia.</small></span><strong id="quoteTotal">$1.850.000 + IVA</strong></div>
     </section>
 
     <section>
@@ -260,7 +259,6 @@
   <script>
     const formatter = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
     const checks = document.querySelectorAll('.quote-check');
-    const total = document.querySelector('#quoteTotal');
     const netTotal = document.querySelector('#netTotal');
     const ivaTotal = document.querySelector('#ivaTotal');
     const grossTotal = document.querySelector('#grossTotal');
@@ -272,7 +270,6 @@
       const amount = [...checks].reduce((sum, check) => check.checked ? sum + Number(check.dataset.price) : sum, 0);
       const selected = [...checks].filter((check) => check.checked).length;
       const iva = Math.round(amount * 0.19);
-      total.textContent = `${formatter.format(amount)} + IVA`;
       netTotal.textContent = formatter.format(amount);
       ivaTotal.textContent = formatter.format(iva);
       grossTotal.textContent = formatter.format(amount + iva);
