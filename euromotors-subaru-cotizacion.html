@@ -28,6 +28,9 @@
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .card { border: 1px solid #d7dde6; background: #f8fafc; border-radius: 4px; padding: 14px; box-shadow: none; }
     .card b { display: block; margin-bottom: 6px; }
+    .tag { display: inline-block; margin-bottom: 8px; padding: 4px 8px; border-radius: 999px; background: #e9f2ff; color: var(--blue); font-size: 11px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+    .tag.optional { background: #fff4df; color: #9a651c; }
+    .price-line { display: block; margin-top: 10px; font-weight: 900; color: var(--ink); }
     .muted { color: var(--muted); }
     .invoice-info { display: grid; grid-template-columns: 1fr 1.2fr; gap: 34px; align-items: start; }
     .meta-rows { display: grid; gap: 6px; font-size: 14px; }
@@ -222,10 +225,10 @@
     <section>
       <h2>Opciones de agendamiento</h2>
       <div class="grid">
-        <div class="card"><b>Opción recomendada: Google Calendar + Google Sheets</b><span class="muted">El cliente agenda desde la web, la solicitud queda guardada en Google Sheets, se crea evento en Google Calendar y el taller recibe notificación por correo. Fácil de administrar sin panel propio.</span></div>
-        <div class="card"><b>Opción rápida: Calendly o TidyCal</b><span class="muted">El cliente elige hora disponible, recibe confirmación automática y puede reagendar. Se inserta dentro del sitio web. Puede requerir pago mensual externo.</span></div>
-        <div class="card"><b>Opción avanzada: panel propio</b><span class="muted">Login privado, calendario interno, estados de solicitud, historial por patente/teléfono y administración completa. Recomendado solo si el volumen de agenda lo justifica.</span></div>
-        <div class="card"><b>Notificaciones</b><span class="muted">Se pueden enviar avisos al correo del taller, correo al cliente y mensaje preparado por WhatsApp para confirmar manualmente.</span></div>
+        <div class="card"><span class="tag">Incluido en cotización</span><b>Formulario de agendamiento base</b><span class="muted">El cliente completa nombre, teléfono, modelo Subaru, patente, kilometraje, servicio, fecha preferida y comentario. La solicitud puede llegar por correo o WhatsApp para que el taller confirme manualmente.</span><span class="price-line">Incluido en ítem $250.000</span></div>
+        <div class="card"><span class="tag optional">Opcional</span><b>Google Sheets + Google Calendar + notificaciones</b><span class="muted">Cada solicitud queda registrada en una planilla, se crea evento en Google Calendar y se envían avisos al taller. Sirve como panel simple para administrar horas sin desarrollar sistema propio.</span><span class="price-line">+$250.000 - $400.000</span></div>
+        <div class="card"><span class="tag optional">Opcional</span><b>Panel propio de agenda con login</b><span class="muted">Panel privado para ver calendario, cambiar estados, revisar solicitudes, filtrar por fecha, patente o teléfono y administrar la operación desde una interfaz propia.</span><span class="price-line">+$900.000 - $1.800.000</span></div>
+        <div class="card"><span class="tag optional">Opcional</span><b>CRM o agenda avanzada</b><span class="muted">Flujo avanzado para múltiples mecánicos, historial por cliente/vehículo, estados de atención, recordatorios y trazabilidad de servicios realizados.</span><span class="price-line">+$700.000</span></div>
       </div>
     </section>
 
