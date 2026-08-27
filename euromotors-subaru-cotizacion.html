@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cotización Sitio Web | Euromotors Temuco - Subaru</title>
+  <style>
+    :root { --ink:#08111f; --muted:#667085; --blue:#0057b8; --soft:#f7f4ed; --paper:#fffaf1; --line:#d9e1ec; --gold:#b8862f; --ease:cubic-bezier(.16,1,.3,1); }
+    * { box-sizing: border-box; }
+    html, body { overflow-x: clip; }
+    body { margin: 0; font-family: "Satoshi", "Geist", "Aptos", "Segoe UI", sans-serif; color: var(--ink); background: #d9dde4; line-height: 1.5; }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.04; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); }
+    .page { width: min(1080px, calc(100% - 28px)); margin: 28px auto; background: #fff; box-shadow: 0 24px 70px rgba(8,17,31,.18); border: 1px solid rgba(8,17,31,.18); }
+    .hero { padding: 34px 34px 20px; color: var(--ink); background: #fff; }
+    .provider { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; margin-bottom: 34px; }
+    .provider-left { display: grid; grid-template-columns: 170px 1fr; gap: 18px; align-items: start; }
+    .brand-logo { width: 164px; color: #2c80f6; }
+    .brand-logo svg { display: block; width: 100%; height: auto; }
+    .provider h2 { margin: 0 0 8px; color: var(--blue); font-size: 22px; letter-spacing: -.03em; }
+    .provider p { margin: 3px 0; color: #4f5d73; font-size: 14px; }
+    .quote-box { min-width: 230px; padding: 12px 18px; color: var(--blue); text-align: right; font-weight: 900; }
+    .quote-box b { display: block; margin-bottom: 10px; font-size: 34px; letter-spacing: -.04em; text-transform: uppercase; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 900; color: var(--blue); }
+    h1 { margin: 8px 0 10px; font-family: "Cabinet Grotesk", "Satoshi", "Aptos Display", sans-serif; font-size: clamp(28px, 4vw, 44px); line-height: 1; letter-spacing: -.05em; text-wrap: balance; }
+    .hero p { max-width: 740px; color: #4f5d73; font-size: 16px; }
+    section { padding: 28px 34px; border-bottom: 1px solid #cfd6df; }
+    h2 { margin: 0 0 18px; font-family: "Cabinet Grotesk", "Satoshi", "Aptos Display", sans-serif; font-size: 30px; letter-spacing: -.045em; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .card { border: 1px solid #d7dde6; background: #f8fafc; border-radius: 4px; padding: 14px; box-shadow: none; }
+    .card b { display: block; margin-bottom: 6px; }
+    .muted { color: var(--muted); }
+    .invoice-info { display: grid; grid-template-columns: 1fr 1.2fr; gap: 34px; align-items: start; }
+    .meta-rows { display: grid; gap: 6px; font-size: 14px; }
+    .meta-row { display: grid; grid-template-columns: 130px 1fr; gap: 12px; }
+    .meta-row b { color: var(--blue); text-transform: uppercase; font-size: 12px; letter-spacing: .04em; }
+    .bill-box { font-size: 14px; }
+    .bill-box h2 { margin-bottom: 10px; color: var(--blue); font-size: 14px; text-transform: uppercase; letter-spacing: .04em; }
+    .bill-box p { margin: 3px 0; }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; }
+    th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+    th { background: #0b2b5c; color: white; }
+    td:last-child, th:last-child { text-align: right; white-space: nowrap; }
+    .total { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; background: #08111f; color: white; border-radius: 24px; padding: 24px; margin-top: 18px; box-shadow: inset 0 1px 0 rgba(255,255,255,.13); }
+    .total strong { font-size: 30px; }
+    .total small { display: block; margin-top: 3px; color: #b8c5d7; }
+    .quote-toolbar { position: sticky; top: 0; z-index: 2; display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; margin-bottom: 14px; padding: 12px 14px; border: 1px solid #cfd6df; background: rgba(255,255,255,.92); backdrop-filter: blur(14px); box-shadow: 0 10px 30px rgba(8,17,31,.08); }
+    .quote-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .mini-btn { min-height: 40px; padding: 0 14px; border: 1px solid #b9c2ce; border-radius: 4px; background: #fff; color: var(--ink); font-weight: 850; cursor: pointer; transition: transform .2s var(--ease), background .2s var(--ease); }
+    .mini-btn:hover, .mini-btn:focus-visible { background: #edf4ff; outline: none; transform: translateY(-1px); }
+    .mini-btn:active { transform: scale(.98); }
+    .selection-status { font-weight: 850; }
+    .selection-status small { display: block; color: var(--muted); font-weight: 500; }
+    .quote-head { display: grid; grid-template-columns: 44px 56px 1fr 140px 140px 44px; gap: 0; margin-top: 18px; border: 2px solid #5f6670; border-bottom: 0; background: #eef4fb; color: var(--blue); font-size: 13px; font-weight: 900; }
+    .quote-head span { padding: 10px; border-right: 1px solid #5f6670; }
+    .quote-head span:last-child { border-right: 0; }
+    .quote-list { display: grid; border: 2px solid #5f6670; }
+    .quote-item { border-bottom: 1px solid #c8cfd8; background: #fff; overflow: hidden; box-shadow: none; transition: opacity .25s var(--ease), background .25s var(--ease); }
+    .quote-item:last-child { border-bottom: 0; }
+    .quote-item:hover { background: #f8fbff; }
+    .quote-item[open] { background: #fbfdff; }
+    .quote-item:has(.quote-check:not(:checked)) { opacity: .56; }
+    .quote-item summary { list-style: none; display: grid; grid-template-columns: 44px 56px 1fr 140px 140px 44px; gap: 0; align-items: center; padding: 0; cursor: pointer; }
+    .quote-item summary::-webkit-details-marker { display: none; }
+    .quote-item summary > span, .quote-item summary > label { min-height: 46px; display: flex; align-items: center; padding: 10px; border-right: 1px solid #d2d8e1; }
+    .quote-item summary > span:last-child { border-right: 0; }
+    .check-cell { justify-content: center; }
+    .quote-check { width: 20px; height: 20px; accent-color: var(--blue); cursor: pointer; }
+    .qty { justify-content: flex-end; color: #5c6675; font-variant-numeric: tabular-nums; }
+    .quote-name { font-weight: 850; }
+    .quote-price { justify-content: flex-end; font-variant-numeric: tabular-nums; font-weight: 900; color: var(--blue); white-space: nowrap; }
+    .quote-toggle { justify-content: center; color: var(--blue); font-weight: 900; transition: transform .25s var(--ease); }
+    .quote-item[open] .quote-toggle { transform: rotate(45deg); }
+    .quote-desc { padding: 14px 18px 16px 100px; color: var(--muted); border-top: 1px dashed #c9d1db; background: #f8fafc; }
+    .quote-desc p { margin: 0 0 10px; }
+    .quote-desc ul { margin: 0; padding-left: 18px; }
+    .totals-grid { width: min(360px, 100%); margin-left: auto; display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 18px; border: 2px solid #5f6670; }
+    .mini-total { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 10px 14px; border-bottom: 1px solid #c8cfd8; background: #fff; }
+    .mini-total:last-child { border-bottom: 0; background: #f3f7fc; }
+    .mini-total span { display: block; color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .mini-total b { display: block; margin-top: 0; font-size: 18px; font-variant-numeric: tabular-nums; }
+    .pill { display: inline-block; padding: 8px 12px; border-radius: 999px; background: #e9f2ff; color: var(--blue); font-weight: 850; font-size: 13px; }
+    .terms { display: grid; gap: 10px; }
+    .sign { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-top: 18px; }
+    .line { border-top: 1px solid var(--ink); padding-top: 10px; color: var(--muted); }
+    @media print { body { background: white; } .page { box-shadow: none; margin: 0; width: 100%; border-radius: 0; } .quote-toolbar { position: static; box-shadow: none; } .quote-actions { display: none; } }
+    @media (max-width: 720px) {
+      .hero, section { padding: 24px; }
+      .provider, .provider-left, .grid, .invoice-info, .meta-row, .sign, .quote-toolbar, .total { grid-template-columns: 1fr; }
+      .brand-logo { width: 150px; }
+      .quote-box { min-width: 0; text-align: left; padding-left: 0; }
+      .quote-head { display: none; }
+      .quote-list { border-width: 1px; }
+      .quote-item summary { grid-template-columns: 42px 1fr 42px; }
+      .quote-item summary > span, .quote-item summary > label { border-right: 0; }
+      .qty { display: none !important; }
+      .quote-name { min-width: 0; }
+      .quote-price { grid-column: 2 / 3; justify-content: flex-start; min-height: auto !important; padding-top: 0 !important; color: #4f5d73; }
+      .quote-price:nth-of-type(4) { display: none; }
+      .quote-toggle { grid-column: 3; grid-row: 1 / 3; }
+      .quote-desc { padding-left: 18px; }
+      .quote-actions { justify-content: stretch; }
+      .mini-btn { flex: 1; }
+      .totals-grid { width: 100%; }
+      td:last-child, th:last-child { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="provider">
+        <div class="provider-left">
+          <img class="brand-logo" src="assets/logo-josoftware.svg" alt="JOSOFTWARE">
+          <div>
+            <h2>JOSOFTWARE SPA</h2>
+            <p><b>RUT:</b> 77.585.197-K</p>
+            <p><b>Giro:</b> Consultoría, desarrollo de plataformas y mantención de software</p>
+            <p><b>WhatsApp:</b> +56 9 5535 7492</p>
+          </div>
+        </div>
+        <div class="quote-box">
+          <b>COTIZACIÓN</b>
+          <span>Nº WEB-001</span><br>
+          <span>Servicio digital</span>
+        </div>
+      </div>
+      <div class="eyebrow">Cotización comercial</div>
+      <h1>Sitio web y redes sociales para Euromotors Temuco - Subaru</h1>
+      <p>Propuesta para presencia digital local, agendamiento de mantenciones y captación de clientes Subaru en Temuco.</p>
+    </header>
+
+    <section>
+      <div class="invoice-info">
+        <div class="meta-rows">
+          <div class="meta-row"><b>Fecha</b><span>Agosto 2026</span></div>
+          <div class="meta-row"><b>Cotización Nº</b><span>WEB-001</span></div>
+          <div class="meta-row"><b>Vigencia</b><span>15 días</span></div>
+          <div class="meta-row"><b>Tipo venta</b><span>Del giro</span></div>
+        </div>
+        <div class="bill-box">
+          <h2>Cliente</h2>
+          <p><b>Señor(es):</b> Euromotors Temuco - Subaru</p>
+          <p><b>Dirección referencial:</b> Las Heras 1060, Temuco, Araucanía</p>
+          <p><b>Proyecto:</b> Sitio web, redes sociales, fotografía y agendamiento online.</p>
+          <p><b>Entrega estimada:</b> 12 a 18 días hábiles desde entrega de contenidos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Alcance incluido</h2>
+      <div class="grid">
+        <div class="card"><b>Sitio web responsive</b><span class="muted">Página inicial, servicios, opiniones, contacto, mapa y llamados a la acción.</span></div>
+        <div class="card"><b>Agendamiento</b><span class="muted">Formulario para nombre, teléfono, modelo, patente, kilometraje, servicio, fecha y hora. Puede quedar conectado a correo, WhatsApp, Google Sheets o calendario.</span></div>
+        <div class="card"><b>Redes sociales</b><span class="muted">Creación o configuración base de Instagram, Facebook y Google Business Profile.</span></div>
+        <div class="card"><b>Fotografías para web y redes</b><span class="muted">Sesión fotográfica en taller para mostrar fachada, equipo, recepción, vehículos, detalles técnicos y contenido inicial para redes.</span></div>
+        <div class="card"><b>SEO local</b><span class="muted">Textos orientados a búsquedas como taller Subaru Temuco y mantención Subaru Temuco.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Inversión</h2>
+      <div class="quote-toolbar" aria-label="Control de servicios cotizados">
+        <div class="selection-status"><span id="selectedCount">8 servicios seleccionados</span><small>Marca o desmarca ítems. Abre cada acordeón para ver qué incluye.</small></div>
+        <div class="quote-actions">
+          <button class="mini-btn" type="button" id="selectAll">Seleccionar todo</button>
+          <button class="mini-btn" type="button" id="clearAll">Limpiar selección</button>
+        </div>
+      </div>
+      <div class="quote-head" aria-hidden="true"><span></span><span>Qty</span><span>Descripción</span><span>Unitario</span><span>Total</span><span></span></div>
+      <div class="quote-list" id="quoteList">
+        <details class="quote-item">
+          <summary><label class="check-cell"><input class="quote-check" type="checkbox" checked data-price="350000" aria-label="Seleccionar diseño visual y prototipo HTML"></label><span class="qty">1</span><span class="quote-name">Diseño visual y prototipo HTML</span><span class="quote-price">$350.000</span><span class="quote-price">$350.000</span><span class="quote-toggle">+</span></summary>
+          <div class="quote-desc"><p>Diseño inicial de la web con estética profesional, jerarquía visual, versión responsive y prototipo navegable. Incluye iteraciones para ajustar textos, secciones, colores, orden de bloques y estilo hasta quedar alineado con lo esperado por el cliente.</p></div>
+        </details>
+        <details class="quote-item">
+          <summary><label class="check-cell"><input class="quote-check" type="checkbox" checked data-price="550000" aria-label="Seleccionar desarrollo sitio web responsive"></label><span class="qty">1</span><span class="quote-name">Desarrollo sitio web responsive</span><span class="quote-price">$550.000</span><span class="quote-price">$550.000</span><span class="quote-toggle">+</span></summary>
+          <div class="quote-desc"><p>Construcción final del sitio para escritorio y móviles. Incluye navegación, secciones comerciales, optimización de carga, estructura semántica, compatibilidad con Hostinger y preparación para publicación.</p></div>
+        </details>
+        <details class="quote-item">
+          <summary><label class="check-cell"><input class="quote-check" type="checkbox" checked data-price="250000" aria-label="Seleccionar formulario de agendamiento base"></label><span class="qty">1</span><span class="quote-name">Formulario de agendamiento base</span><span class="quote-price">$250.000</span><span class="quote-price">$250.000</span><span class="quote-toggle">+</span></summary>
+          <div class="quote-desc"><p>Formulario para solicitar hora con datos del cliente y vehículo: nombre, teléfono, modelo Subaru, patente, kilometraje, servicio, fecha, bloque horario y comentario. Facilita ordenar solicitudes antes de confirmar la visita.</p></div>
+        </details>
+        <details class="quote-item">
+          <summary><label class="check-cell"><input class="quote-check" type="checkbox" checked data-price="120000" aria-label="Seleccionar integración teléfono mapa y WhatsApp"></label><span class="qty">1</span><span class="quote-name">Integración teléfono, mapa y WhatsApp</span><span class="quote-price">$120.000</span><span class="quote-price">$120.000</span><span class="quote-toggle">+</span></summary>
+          <div class="quote-desc"><p>Botones de llamada directa, enlace a WhatsApp, mapa embebido, dirección, horarios y llamados a la acción visibles. Ayuda a convertir visitas del sitio en contacto real.</p></div>
+        </details>
+        <details class="quote-item">
+          <summary><label class="check-cell"><input class="quote-check" type="checkbox" checked data-price="180000" aria-label="Seleccionar SEO local básico"></label><span class="qty">1</span><span class="quote-name">SEO local básico</span><span class="quote-price">$180.000</span><span class="quote-price">$180.000</span><span class="quote-toggle">+</span></summary>
+          <div class="quote-desc"><p>Optimización para que la web sea entendible por Google y compita en búsquedas locales como “taller Subaru Temuco”, “mantención Subaru Temuco” y “servicio Subaru Temuco”.</p><ul><li>Metatítulos y descripciones.</li><li>Textos con intención de búsqueda local.</li><li>Estructura de encabezados.</li><li>Preparación para Search Console.</li></ul></div>
+        </details>
+        <details class="quote-item">
+          <summary><label class="check-cell"><input class="quote-check" type="checkbox" checked data-price="110000" aria-label="Seleccionar creación y configuración redes sociales"></label><span class="qty">1</span><span class="quote-name">Creación/configuración redes sociales</span><span class="quote-price">$110.000</span><span class="quote-price">$110.000</span><span class="quote-toggle">+</span></summary>
+          <div class="quote-desc"><p>Configuración base de Instagram, Facebook y Google Business Profile, con datos comerciales, descripción, enlaces, imagen de perfil/portada y coherencia visual con el sitio.</p></div>
+        </details>
+        <details class="quote-item">
+          <summary><label class="check-cell"><input class="quote-check" type="checkbox" checked data-price="140000" aria-label="Seleccionar sesión fotográfica para sitio web y redes sociales"></label><span class="qty">1</span><span class="quote-name">Sesión fotográfica para sitio web y redes sociales</span><span class="quote-price">$140.000</span><span class="quote-price">$140.000</span><span class="quote-toggle">+</span></summary>
+          <div class="quote-desc"><p>Sesión en taller para generar material real: fachada, recepción, vehículos, equipo, herramientas, boxes de trabajo y detalles técnicos. Las fotos sirven para sitio web, redes sociales y perfil de Google.</p></div>
+        </details>
+        <details class="quote-item">
+          <summary><label class="check-cell"><input class="quote-check" type="checkbox" checked data-price="150000" aria-label="Seleccionar redacción comercial inicial"></label><span class="qty">1</span><span class="quote-name">Redacción comercial inicial</span><span class="quote-price">$150.000</span><span class="quote-price">$150.000</span><span class="quote-toggle">+</span></summary>
+          <div class="quote-desc"><p>Redacción de textos base para comunicar servicios, diferenciales, horarios, llamado a agendar, beneficios para clientes Subaru y mensajes de confianza local.</p></div>
+        </details>
+      </div>
+      <div class="totals-grid" aria-label="Resumen de valores">
+        <div class="mini-total"><span>Neto</span><b id="netTotal">$1.850.000</b></div>
+        <div class="mini-total"><span>IVA 19%</span><b id="ivaTotal">$351.500</b></div>
+        <div class="mini-total"><span>Total con IVA</span><b id="grossTotal">$2.201.500</b></div>
+      </div>
+      <div class="total"><span>Total proyecto seleccionado<small>Monto neto. IVA calculado arriba para referencia.</small></span><strong id="quoteTotal">$1.850.000 + IVA</strong></div>
+    </section>
+
+    <section>
+      <h2>Servicio fotográfico incluido</h2>
+      <div class="grid">
+        <div class="card"><b>Sesión en taller</b><span class="muted">Registro de fachada, recepción, boxes de trabajo, herramientas, vehículos Subaru, detalles de mantención y equipo humano.</span></div>
+        <div class="card"><b>Uso comercial</b><span class="muted">Fotografías optimizadas para sitio web, Google Business Profile, Instagram, Facebook y piezas promocionales digitales.</span></div>
+        <div class="card"><b>Edición base</b><span class="muted">Selección, color, recorte, ajuste de luz y exportación en formatos web y redes sociales.</span></div>
+        <div class="card"><b>Entrega</b><span class="muted">30 a 45 fotografías editadas. Entrega digital en carpeta compartida.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Opciones de agendamiento</h2>
+      <div class="grid">
+        <div class="card"><b>Opción recomendada: Google Calendar + Google Sheets</b><span class="muted">El cliente agenda desde la web, la solicitud queda guardada en Google Sheets, se crea evento en Google Calendar y el taller recibe notificación por correo. Fácil de administrar sin panel propio.</span></div>
+        <div class="card"><b>Opción rápida: Calendly o TidyCal</b><span class="muted">El cliente elige hora disponible, recibe confirmación automática y puede reagendar. Se inserta dentro del sitio web. Puede requerir pago mensual externo.</span></div>
+        <div class="card"><b>Opción avanzada: panel propio</b><span class="muted">Login privado, calendario interno, estados de solicitud, historial por patente/teléfono y administración completa. Recomendado solo si el volumen de agenda lo justifica.</span></div>
+        <div class="card"><b>Notificaciones</b><span class="muted">Se pueden enviar avisos al correo del taller, correo al cliente y mensaje preparado por WhatsApp para confirmar manualmente.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Opcionales</h2>
+      <table>
+        <thead><tr><th>Opcional</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Administración mensual redes sociales, 8 publicaciones + historias</td><td>$350.000 - $550.000 / mes</td></tr>
+          <tr><td>Sesión fotográfica mensual para redes</td><td>$180.000 - $300.000 / mes</td></tr>
+          <tr><td>Configuración de dominio cliente en Hostinger y DNS</td><td>Incluido</td></tr>
+          <tr><td>Correos corporativos en Hostinger</td><td>$80.000 - $180.000 / año</td></tr>
+          <tr><td>Integración Google Sheets + Google Calendar + notificaciones</td><td>+$250.000 - $400.000</td></tr>
+          <tr><td>Inserción Calendly/TidyCal y configuración de disponibilidad</td><td>+$120.000 - $180.000</td></tr>
+          <tr><td>Panel administrador o CMS</td><td>+$500.000 - $900.000</td></tr>
+          <tr><td>Panel propio de agenda con login/calendario</td><td>+$900.000 - $1.800.000</td></tr>
+          <tr><td>CRM o agenda avanzada con múltiples mecánicos</td><td>+$700.000</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Condiciones</h2>
+      <div class="terms">
+        <div class="card">Pago sugerido: 50% inicio, 50% contra entrega.</div>
+        <div class="card">Dominio será provisto por el cliente. Se incluye configuración básica en Hostinger/DNS.</div>
+        <div class="card">Valores no incluyen inversión publicitaria, correos corporativos ni licencias pagadas.</div>
+        <div class="card">Datos públicos como dirección, teléfono y horarios deben ser validados por cliente antes de publicación.</div>
+        <div class="card">Validez cotización: 15 días.</div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const formatter = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
+    const checks = document.querySelectorAll('.quote-check');
+    const total = document.querySelector('#quoteTotal');
+    const netTotal = document.querySelector('#netTotal');
+    const ivaTotal = document.querySelector('#ivaTotal');
+    const grossTotal = document.querySelector('#grossTotal');
+    const selectedCount = document.querySelector('#selectedCount');
+    const selectAll = document.querySelector('#selectAll');
+    const clearAll = document.querySelector('#clearAll');
+
+    function updateTotal() {
+      const amount = [...checks].reduce((sum, check) => check.checked ? sum + Number(check.dataset.price) : sum, 0);
+      const selected = [...checks].filter((check) => check.checked).length;
+      const iva = Math.round(amount * 0.19);
+      total.textContent = `${formatter.format(amount)} + IVA`;
+      netTotal.textContent = formatter.format(amount);
+      ivaTotal.textContent = formatter.format(iva);
+      grossTotal.textContent = formatter.format(amount + iva);
+      selectedCount.textContent = `${selected} de ${checks.length} servicios seleccionados`;
+    }
+
+    checks.forEach((check) => {
+      check.addEventListener('click', (event) => event.stopPropagation());
+      check.addEventListener('change', updateTotal);
+    });
+
+    selectAll.addEventListener('click', () => {
+      checks.forEach((check) => check.checked = true);
+      updateTotal();
+    });
+
+    clearAll.addEventListener('click', () => {
+      checks.forEach((check) => check.checked = false);
+      updateTotal();
+    });
+
+    updateTotal();
+  </script>
+</body>
+</html>

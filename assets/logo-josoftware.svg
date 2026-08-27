@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1772 1746" role="img" aria-labelledby="title desc">
+  <title id="title">JOSOFTWARE</title>
+  <desc id="desc">Logo JOSOFTWARE con marco azul y circuitos cian.</desc>
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2d7dff"/>
+      <stop offset="1" stop-color="#2278f4"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#39edf0"/>
+      <stop offset="1" stop-color="#28dde1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1772" height="1746" fill="#fff"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M316 953V260c0-53 43-96 96-96h512c53 0 96 43 96 96v55" stroke="url(#blue)" stroke-width="25"/>
+    <path d="M1005 883v60c0 53-43 96-96 96H413c-53 0-96-43-96-96" stroke="url(#blue)" stroke-width="25"/>
+    <path d="M229 952V254c0-84 68-152 152-152h543c84 0 152 68 152 152v61" stroke="url(#blue)" stroke-width="25"/>
+    <path d="M1076 884v61c0 84-68 152-152 152H381c-84 0-152-68-152-152" stroke="url(#blue)" stroke-width="25"/>
+    <path d="M587 368h550l38-39h83" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M537 448h779l41 42h151" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M593 522h553" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M421 601h827l54-54h119" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M502 675h619l47 53h181" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M588 755h475l54 55h210" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M583 832h503l46-46h279" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M1130 785l51 50h77" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M1229 329l28-28h60" stroke="url(#cyan)" stroke-width="25"/>
+    <path d="M1319 342h78" stroke="url(#cyan)" stroke-width="25"/>
+  </g>
+  <g fill="#fff" stroke="url(#cyan)" stroke-width="25">
+    <circle cx="1260" cy="301" r="23"/>
+    <circle cx="1421" cy="342" r="25"/>
+    <circle cx="1541" cy="491" r="31"/>
+    <circle cx="1426" cy="549" r="35"/>
+    <circle cx="1170" cy="522" r="22"/>
+    <circle cx="1056" cy="755" r="22"/>
+    <circle cx="1349" cy="728" r="25"/>
+    <circle cx="1540" cy="834" r="31"/>
+    <circle cx="1364" cy="936" r="22"/>
+  </g>
+  <text x="116" y="1606" fill="#2d7dff" font-family="Arial Narrow, Aptos, sans-serif" font-size="260" font-weight="700" letter-spacing="6">JOSOFTWARE</text>
+</svg>
