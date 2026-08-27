@@ -18,7 +18,6 @@
     .brand-logo svg { display: block; width: 100%; height: auto; }
     .provider h2 { margin: 0 0 8px; color: var(--blue); font-size: 22px; letter-spacing: -.03em; }
     .provider p { margin: 3px 0; color: #4f5d73; font-size: 14px; }
-    .provider a { color: var(--blue); font-weight: 900; }
     .quote-box { min-width: 230px; padding: 12px 18px; color: var(--blue); text-align: right; font-weight: 900; }
     .quote-box b { display: block; margin-bottom: 10px; font-size: 34px; letter-spacing: -.04em; text-transform: uppercase; }
     .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 900; color: var(--blue); }
@@ -40,6 +39,8 @@
     .bill-box { font-size: 14px; }
     .bill-box h2 { margin-bottom: 10px; color: var(--blue); font-size: 14px; text-transform: uppercase; letter-spacing: .04em; }
     .bill-box p { margin: 3px 0; }
+    .mobile-summary { display: contents; }
+    .mobile-summary > summary { display: none; }
     table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; }
     th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
     th { background: #0b2b5c; color: white; }
@@ -105,6 +106,11 @@
       .eyebrow, .hero h1, .hero > p, .invoice-info, .bill-box { text-align: center; }
       .grid, .invoice-info, .sign, .quote-toolbar, .total { grid-template-columns: 1fr; }
       .invoice-info { gap: 16px; }
+      .mobile-summary { display: block; }
+      .mobile-summary > summary { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin-bottom: 12px; border: 1px solid #cfd6df; background: #f8fafc; color: var(--blue); font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; cursor: pointer; }
+      .mobile-summary > summary::-webkit-details-marker { display: none; }
+      .mobile-summary > summary:after { content: "+"; font-size: 18px; line-height: 1; }
+      .mobile-summary[open] > summary:after { content: "-"; }
       .meta-rows { grid-template-columns: 1fr 1fr; gap: 10px 14px; }
       .meta-row { grid-template-columns: 1fr; gap: 4px; }
       .meta-row b { font-size: 11px; }
@@ -142,8 +148,6 @@
           <div>
             <h2>JOSOFTWARE SPA</h2>
             <p><b>RUT:</b> 77.585.197-K</p>
-            <p><b>Giro:</b> Consultoría, desarrollo de plataformas y mantención de software</p>
-            <p><b>WhatsApp:</b> <a href="https://wa.me/56955357492" target="_blank" rel="noopener">+56 9 5535 7492</a></p>
           </div>
         </div>
         <div class="quote-box">
@@ -158,21 +162,24 @@
     </header>
 
     <section>
-      <div class="invoice-info">
-        <div class="meta-rows">
-          <div class="meta-row"><b>Fecha</b><span>Agosto 2026</span></div>
-          <div class="meta-row"><b>Cotización Nº</b><span>WEB-001</span></div>
-          <div class="meta-row"><b>Vigencia</b><span>15 días</span></div>
-          <div class="meta-row"><b>Tipo venta</b><span>Del giro</span></div>
+      <details class="mobile-summary" open>
+        <summary>Ver datos de cotización</summary>
+        <div class="invoice-info">
+          <div class="meta-rows">
+            <div class="meta-row"><b>Fecha</b><span>Agosto 2026</span></div>
+            <div class="meta-row"><b>Cotización Nº</b><span>WEB-001</span></div>
+            <div class="meta-row"><b>Vigencia</b><span>15 días</span></div>
+            <div class="meta-row"><b>Tipo venta</b><span>Del giro</span></div>
+          </div>
+          <div class="bill-box">
+            <h2>Cliente</h2>
+            <p><b>Señor(es):</b> Euromotors Temuco - Subaru</p>
+            <p><b>Dirección referencial:</b> Las Heras 1060, Temuco, Araucanía</p>
+            <p><b>Proyecto:</b> Sitio web, redes sociales, fotografía y agendamiento online.</p>
+            <p><b>Entrega estimada:</b> 12 a 18 días hábiles desde entrega de contenidos.</p>
+          </div>
         </div>
-        <div class="bill-box">
-          <h2>Cliente</h2>
-          <p><b>Señor(es):</b> Euromotors Temuco - Subaru</p>
-          <p><b>Dirección referencial:</b> Las Heras 1060, Temuco, Araucanía</p>
-          <p><b>Proyecto:</b> Sitio web, redes sociales, fotografía y agendamiento online.</p>
-          <p><b>Entrega estimada:</b> 12 a 18 días hábiles desde entrega de contenidos.</p>
-        </div>
-      </div>
+      </details>
     </section>
 
     <section>
@@ -292,6 +299,11 @@
     const selectedCount = document.querySelector('#selectedCount');
     const selectAll = document.querySelector('#selectAll');
     const clearAll = document.querySelector('#clearAll');
+    const mobileSummary = document.querySelector('.mobile-summary');
+
+    if (matchMedia('(max-width: 720px)').matches) {
+      mobileSummary.removeAttribute('open');
+    }
 
     function updateTotal() {
       const amount = [...checks].reduce((sum, check) => check.checked ? sum + Number(check.dataset.price) : sum, 0);
